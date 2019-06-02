@@ -7,6 +7,7 @@ var ejs = require('ejs');
 
 app.locals.pretty = true
 app.use(express.static('public')); 
+app.use(express.static('node_modules'));
 app.use(bodyParser.urlencoded({extended : true})); 
 app.set('view engine', 'ejs');//ejs 템플릿 엔진  연동 
 
@@ -21,7 +22,7 @@ app.post('/', function (req, res) {
    res.render('index', {name: data}); 
 });
 */
-app.listen(3000, function(){ 
+app.listen(80, function(){ 
      console.log('App Listening on port 3000'); 
 });
 
