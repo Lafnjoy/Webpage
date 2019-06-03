@@ -10,7 +10,7 @@ router.get('/',function(req,res,next){
     res.render('index', {name: data});
 
 request.get('http://175.195.56.132:3000/sensordata',function(err,res,body){
-    jsonfile.writeFile('sensordata', res.body);
+    jsonfile.writeFile('sensordata.json', res.body);
 });
 });
 module.exports = router;
