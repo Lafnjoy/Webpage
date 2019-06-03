@@ -15,16 +15,12 @@ app.use(bodyParser.json());
 
 
 app.set('view engine', 'ejs');//ejs 템플릿 엔진  연동 
-app.get('/', function (req, res) { 
+app.get('/', function (req, res, ) { 
  
    var data = req.body; 
-   res.render('index', {name: data});//views디렉토리안에 있는 index.ejs 파일 
+   res.render('index', {name: data});
+  
 });
-
-
-
-
-
 
 
 
