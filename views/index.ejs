@@ -98,16 +98,27 @@
                     <th>사용여부</th>
                   </tr>
                 </thead>
-                 <tfoot>
+                 <script>
+                $.getJSON("sensordata.json", function (data){
+                  var room1 = [];
+                  $.each(data, function(key,val){
+                    room1.push( "<li id='" + key + "'>" + val + "</li>" );
+                   });          
+		  $('<ul>'{
+			'class':'room1data',
+			html:room1.join('')
+			}).appendTo('body');
+                  });                              
+                </script>
+                 <tbody>
                   <tr>
-                    <th>Name</th>
-                    <th>Position</th>
-                    <th>Office</th>
-                    <th>Age</th>
-                    <th>Start date</th>
-                    <th>Salary</th>
+                    <th>&{room1data.1}; </th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
                   </tr>
-                </tfoot>
+		</tbody>
               </table>
             </div>
           </div>
