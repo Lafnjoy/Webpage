@@ -69,17 +69,7 @@
         </ol>
 
        
-        <!-- Area Chart Example-->
-        <div class="card mb-3">
-          <div class="card-header">
-            <i class="fas fa-chart-area"></i>
-            용인시 [기온 / 습도] 현황</div>
-          <div class="card-body">
-            <canvas id="myAreaChart" width="100%" height="30"></canvas>
-          </div>
-          <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-        </div>
-
+        
         <!-- DataTables Example -->
         <div class="card mb-3">
           <div class="card-header">
@@ -90,35 +80,15 @@
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
-                    <th>온/습도</th>
-                    <th>동작 감지</th>
-                    <th>불</th>
-                    <th>소리</th>
-                    <th>냉/난방 여부</th>
-                    <th>사용여부</th>
+                    Room1 환경정보 
                   </tr>
                 </thead>
-                 <script>
-                $.getJSON("sensordata.json", function (data){
-                  var room1 = [];
-                  $.each(data, function(key,val){
-                    room1.push( "<li id='" + key + "'>" + val + "</li>" );
-                   });          
-		  $('<ul>'{
-			'class':'room1data',
-			html:room1.join('')
-			}).appendTo('body');
-                  });                              
-                </script>
                  <tbody>
                   <tr>
-                    <th>&{room1data.1}; </th>
-                    <th>1</th>
-                    <th>2</th>
-                    <th>3</th>
-                    <th>4</th>
+                    <% JSON.stringify(data) %>
+                  <th><%= data %> </th>
                   </tr>
-		</tbody>
+		            </tbody>
               </table>
             </div>
           </div>
