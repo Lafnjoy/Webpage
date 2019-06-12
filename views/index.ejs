@@ -80,13 +80,27 @@
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
-                    Room1 환경정보 
+                        <th>방</th>
+                        <th>온도</th>
+                        <th>습도</th>
+                        <th>동작</th>
+                        <th>소리</th>
+                        <th>전등</th>
+                        <th>사용 여부</th>
+                      
                   </tr>
-                </thead>
                  <tbody>
                   <tr>
-                    <% JSON.stringify(data) %>
-                  <th><%= data %> </th>
+                  <th>HJ</th>
+                  <td><%=R1T %></td>
+                  <td><%=R1H %></td>
+                  <td><%=R1P %></td>
+                  <td><%=R1S %></td>                  
+                  <td><%=R1L %></td>
+                  <% var R1Y %>
+                  <% if(R1P ===1 && R1S ===1 && R1L ===1){R1Y = "사용중"}else{R1Y = "사용안함"} %>
+                  <td><%= R1Y  %></td>
+
                   </tr>
 		            </tbody>
               </table>

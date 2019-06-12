@@ -19,4 +19,3 @@ app.set('view engine', 'ejs');//ejs 템플릿 엔진  연동
 app.listen(80, function(){ 
      console.log('App Listening on port 80'); 
 });
-
