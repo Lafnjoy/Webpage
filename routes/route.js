@@ -3,14 +3,11 @@ var request = require('request')
 var bodyParser = require('body-parser');
 var jsonfile = require('jsonfile');
 var sensorD;
-
+var router = express.Router();
 request.get('http://175.195.56.132:3000/sensordata',function(err,res,body){
     sensorD = res.body;
    
 });
-
-var router = express.Router();
-
    
 router.get('/',function(req,res,next){
     var data = req.body; 
